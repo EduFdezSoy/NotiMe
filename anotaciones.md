@@ -14,10 +14,11 @@ estructura =
 	incidences:  
 		id (primary key) = int, auto increment  
 		inc_num = int <- una incidencia puede y debe tener varios comentarios  
+		service_id (fk)  
 		title = varchar(50)  
 		description = varchar (240)  
-		open = timestamp <- fecha de apertura, puede ser anterior a la fecha actual, se abre sola cuando algun servicio falla  
-		close = timestamp <- fecha de cerrado, cuando la incidencia se soluciona, las incidencias automaticas se pueden autocerrar si el servicio vuelve a responder con exito  
+		iopen = timestamp <- fecha de apertura, puede ser anterior a la fecha actual, se abre sola cuando algun servicio falla  
+		iclose = timestamp <- fecha de cerrado, cuando la incidencia se soluciona, las incidencias automaticas se pueden autocerrar si el servicio vuelve a responder con exito  
 		timedate = timestamp <- fecha del comentario, si existe  
   
 faltan las tablas de registro y gestoin de usuarios  
