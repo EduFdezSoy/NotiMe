@@ -23,7 +23,7 @@ estructura =
   
 faltan las tablas de registro y gestoin de usuarios  
 
-## frontend
+## Frontend
 Pestañas con servidores, servicios e incidencias  
 
 ## Backend
