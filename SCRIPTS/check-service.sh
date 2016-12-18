@@ -27,11 +27,12 @@ dbname="notime"
 service="java -Xmx756M -Xms100M -jar minecraft_server.1.11.jar"
 notimeid=8
 
-## SCRIPT ##
+## SCRIPT - DO NOT TOUCH UNDER HERE ##
 temp=time
 # comprobar los datos
-if [ps aux | grep -c $service=<1]
+if [ps aux | grep -v grep | grep -c $service=1]
     ok=1
+	# si es igual o mayor a 1 el servicio esta ok, recordamos que el grep puede aparecer en la lista, asi que >1
 else
     ok=0
     if [$(echo "SELECT ok FROM auto_logs where services_id=$notimeid ORDER BY id DESC LIMIT 1" | mysql database --user=$user --password=$pass)=0]
@@ -41,8 +42,6 @@ else
         insert into incidences (inc_num,service_id,title,description,iopen) values($ultinc, $service, "The service is down!", $temp);
 EOF
     fi
-
-    
 fi
 # insertar los datos en la tabla 
 mysql --host=$host --user=$user --password=$pass $dbname << EOF
