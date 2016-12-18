@@ -1,4 +1,4 @@
-## Base de datos:
+## Base de datos
 nombre = notime  
 estructura =  
 	auto_logs:  
@@ -22,3 +22,10 @@ estructura =
 		timedate = timestamp <- fecha del comentario, si existe  
   
 faltan las tablas de registro y gestoin de usuarios  
+
+## frontend
+Pestañas con servidores, servicios e incidencias  
+
+## Backend
+Gestor de servidores, servicios e incidencias  
+App javascript que según las elecciones genera en tiempo real el script .sh necesario para comprobar el servicio/servidor y de instrucciones de como añadirlo al crontab.  
