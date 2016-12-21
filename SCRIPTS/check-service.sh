@@ -30,7 +30,7 @@ notimeid=8
 
 
 ## SCRIPT - DO NOT TOUCH UNDER HERE ##
-temp=time
+temp=`date +%s`
 dothis=$(ps aux | grep -v "grep" | grep -c "$service")
 #recordamos que el grep puede aparecer en la lista, asi que lo filtramos
 
