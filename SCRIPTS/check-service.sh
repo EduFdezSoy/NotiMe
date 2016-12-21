@@ -27,12 +27,17 @@ dbname="notime"
 service="java -Xmx756M -Xms100M -jar minecraft_server.1.11.jar"
 notimeid=8
 
+
+
 ## SCRIPT - DO NOT TOUCH UNDER HERE ##
 temp=time
+dothis=$(ps aux | grep -v "grep" | grep -c "$service")
+#recordamos que el grep puede aparecer en la lista, asi que lo filtramos
+
 # comprobar los datos
-if [ps aux | grep -v grep | grep -c $service=1]
+if [$dothis -ge 1]
     ok=1
-	# si es igual o mayor a 1 el servicio esta ok, recordamos que el grep puede aparecer en la lista, asi que >1
+	# si es igual o mayor a 1 el servicio esta ok
 else
     ok=0
     if [$(echo "SELECT ok FROM auto_logs where services_id=$notimeid ORDER BY id DESC LIMIT 1" | mysql database --user=$user --password=$pass)=0]
