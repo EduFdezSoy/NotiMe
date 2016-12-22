@@ -1,10 +1,10 @@
-## Base de datos
+﻿## Base de datos
 nombre = notime  
 estructura =  
 	auto_logs:  
 		id (primary key) = int, auto increment  
 		service_id (fk) = char(10)  
-		ok = voleano <- estado, 1 su funca 0 si no funca  
+		ok = boleano <- estado, 1 su funca 0 si no funca  
 		timedate = timestamp  
 	services:  
 		id (primary key) = int, auto increment  
